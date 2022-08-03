@@ -1,13 +1,14 @@
 @media screen and (min-width: 320px) {
-    .header {
+    .headerAuth {
         background-color: #E4B062;
         height: 118px;
         display: flex;
         align-items: center;
     }
 
-    .header__logo {
+    .headerAuth__logo {
         padding-left: 15px;
+        cursor: pointer;
     }
 
     .logo__large {
@@ -23,7 +24,7 @@
 
 
 @media screen and (min-width: 744px) {
-    .header {
+    .headerAuth {
         background-color: #E4B062;
         height: 118px;
         display: flex;
@@ -31,7 +32,7 @@
 
     }
 
-    .header__logo {
+    .headerAuth__logo {
         padding-left: 37px;
     }
 
@@ -48,7 +49,7 @@
 
 
 @media screen and (min-width: 1440px) {
-    .header__logo {
+    .headerAuth__logo {
         padding-left: 41px;
     }
 }
