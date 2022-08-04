@@ -6,28 +6,25 @@ export default function Publication(props) {
 
     const randomPost = userPosts[Math.floor(Math.random() * userPosts.length)]
 
-console.log(userPhotos)
     return (
-        <article>
-            <div>
-                <div>
-                    {/* <img src={userPhotos[Math.floor(Math.random() * userPhotos.length)].thumbnailUrl} /> */}
+        <article className='pub'>
+            <div className='pub__person'>
+                <div className='person__img'>
+                    <img src={userPhotos[Math.floor(Math.random() * userPhotos.length)].thumbnailUrl} />
                 </div>
-                <div>
-                    <p>
+                <div className='person__data'>
+                    <p className='person__name'>
                         Author: {userInfo.name}
                     </p>
-                    <p>
+                    <p className='person__company'>
                         Company: {userInfo.company.name}
                     </p>
                 </div>
             </div>
-            <div>
-                <p>
-                    Title: {randomPost.title}
-                </p>
+            <div className='pub__title'>
+                Title: {randomPost.title}
             </div>
-            <div>
+            <div className='pub__body'>
                 {randomPost.body}
             </div>
         </article>

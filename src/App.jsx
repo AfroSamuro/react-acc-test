@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainPage from "./pages/mainPage/MainPage";
 import { useEffect } from "react";
 import { useState } from "react";
+import React from "react";
 
 export default function App() {
 
@@ -38,16 +39,19 @@ export default function App() {
         getPosts();
         getPhotos();
     }, []);
-    
-    return (
-        <BrowserRouter>
-            <div className="app">
-                <Routes>
-                    <Route path="/auth" element={<AuthPage users={usersAcc} />} />
-                    <Route path="/main" element={<MainPage posts={posts} users={users} photos={photos}/>} />
-                </Routes>
-            </div>
-        </BrowserRouter>
 
+    if(users.length === 0 || posts.length === 0 || photos.length === 0)  return 
+
+    return (
+        <React.StrictMode>
+            <BrowserRouter>
+                <div className="app">
+                    <Routes>
+                        <Route path="/" element={<AuthPage users={usersAcc} />} />
+                        <Route path="/main" element={<MainPage posts={posts} users={users} photos={photos} />} />
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        </React.StrictMode>
     )
 }

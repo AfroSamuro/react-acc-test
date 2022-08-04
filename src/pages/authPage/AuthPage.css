@@ -5,7 +5,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-top: 14px;
+        padding-bottom: 20px;
     }
 
     .content__authWindow {
@@ -17,7 +17,7 @@
         border: 5px solid #27569C;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 6px;
-
+        margin-top: 14px;
     }
 
     .authWindow__title {
@@ -70,13 +70,12 @@
 
 @media screen and (min-width: 744px) {
     .content {
-        width: 700px;
+        width: 670px;
         margin: 0 auto;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
-        padding-top: 284px;
-
     }
 
     .content__authWindow {
@@ -88,7 +87,7 @@
         border: 5px solid #27569C;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 6px;
-
+        margin-top: 284px;
     }
 
     .authWindow__title {
@@ -132,7 +131,10 @@
 
 @media screen and (min-width: 1440px) {
     .content {
-        width: 1280px;
-        padding-top: 224px;
+        width: 947px;
+    }
+
+    .content__authWindow {
+        margin-top: 224px;
     }
 }
