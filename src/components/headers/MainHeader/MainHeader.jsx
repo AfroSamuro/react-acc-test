@@ -2,6 +2,7 @@ import './MainHeader.css'
 import logoL from '../../../images/logoL.svg'
 import logoS from '../../../images/logoS.svg'
 import logOut from '../../../images/logOut.svg'
+import { Link } from 'react-router-dom'
 
 export default function MainHeader() {
 
@@ -22,9 +23,9 @@ export default function MainHeader() {
             </div>
             <div className='headerMain__user'>
                     <p className='user__title'>Username</p>
-                    <div className='user__logOut'>
+                    <Link className='user__logOut' to={'/'}>
                         <img src={logOut} />
-                    </div>
+                    </Link>
             </div>
         </header>
     )
