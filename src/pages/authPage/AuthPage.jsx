@@ -7,10 +7,14 @@ import './AuthPage.css'
 export default function AuthPage(props) {
 
     const { users, setLoginInfo } = props;
+    const [isWrong, setIsWrong] = useState(false)
 
     const navigate = useNavigate()
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        setIsWrong(false)
 
         let { typedLogin, typedPassword } = document.forms[0];
 
@@ -19,26 +23,28 @@ export default function AuthPage(props) {
             navigate('/main')
             setLoginInfo()
         } else {
-            // renderError()
+            setIsWrong(true)
         }
-    }
 
+    }
 
     return (
         <>
             <AuthHeader />
             <main className="content">
-                <div className="wrongLogin">
-                    Wrong login or password!
-                </div>
                 <form
                     className="content__authWindow"
                     onSubmit={handleSubmit}
-                // ref={ref}
                 >
                     <p className="authWindow__title">
                         Authorization
                     </p>
+                    <div
+                        className="wrongAuth"
+                        style={isWrong ? { opacity: '1', animation: 'HideWarning 0s 3s forwards' } : null} // не придумал, как сделать повторяющуюся анимацию неверного пароля
+                    >
+                        Wrong login or password!
+                    </div>
                     <div className="authWindow__login">
                         <label className="login__title">
                             login
@@ -47,8 +53,6 @@ export default function AuthPage(props) {
                             className="login__input"
                             type="text"
                             name="typedLogin"
-                            // onChange={e => setTypedLogin(e.target.value)}
-                            // onKeyDown={handleSubmit}
                             required={true}
                         />
                     </div>
@@ -60,8 +64,6 @@ export default function AuthPage(props) {
                             className="pass__input"
                             type="password"
                             name="typedPassword"
-                            // onKeyDown={handleSubmit}
-                            // onChange={e => setTypedPassword(e.target.value)} 
                             required
                         />
                     </div>

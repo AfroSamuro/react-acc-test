@@ -61,9 +61,25 @@
         border-radius: 10px;
     }
 
-    .wrongLogin {
+    .wrongAuth {
         position: absolute;
-        display: none;
+        background-color: #27569C;
+        top: 118px;
+        left: 0;
+        opacity: 0;
+        transition: all 1s ease;
+        width: 220px;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    @keyframes HideWarning {
+        to {
+            opacity: 0;
+        }
     }
 
     button {
