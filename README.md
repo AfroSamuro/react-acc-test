@@ -1,2 +1,2 @@
-Login - admin
-Password- admin
+Login - admin;
+Password- admin;
